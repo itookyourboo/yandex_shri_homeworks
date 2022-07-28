@@ -1,0 +1,173 @@
+.App {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.App-footer {
+    background: #F0F2F3;
+    line-height: 32px;
+    padding: 8px 100px;
+
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.App-footer-items {
+    display: inline-flex;
+    justify-content: space-between;
+    column-gap: 12px;
+}
+
+.innerPad {
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
+.innerPad.header {
+    line-height: 48px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    display: inline-flex;
+    justify-content: space-between;
+    justify-items: start;
+}
+
+.StartScreen {
+    display: grid;
+    grid-auto-rows: auto 1fr;
+}
+
+.innerPad.StartScreen-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.SettingsScreen {
+    display: grid;
+    grid-auto-rows: auto 1fr;
+}
+
+.innerPad.SettingsScreen-main {
+    padding-left: 100px;
+}
+
+.SettingsScreen-frame {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 474px;
+}
+
+.SettingsScreen-frame-title {
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: space-between;
+}
+
+.SettingsScreen-frame-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.SettingsScreen-frame-sync {
+    display: flex;
+    flex-direction: row;
+    line-height: 60px;
+    gap: 8px;
+}
+
+.BuildHistoryScreen {
+    display: grid;
+    grid-auto-rows: auto 1fr;
+}
+
+.BuildHistoryScreen-header-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+}
+
+.innerPad.BuildHistoryScreen-main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 18px;
+    padding-left: 100px;
+    padding-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+}
+
+@media (max-width: 600px) {
+    .App-footer {
+        line-height: 68px;
+        padding: 12px 16px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .innerPad {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .innerPad.header {
+        line-height: 52px;
+        padding-top: 16px;
+        padding-bottom: 16px;
+    }
+
+    .innerPad.SettingsScreen-main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .SettingsScreen-frame-buttons {
+        display: block;
+        gap: 8px;
+    }
+
+    .SettingsScreen-frame-buttons .button {
+        margin-bottom: 8px;
+    }
+
+    .innerPad.BuildHistoryScreen-main {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /*.card {*/
+    /*    flex-direction: column;*/
+    /*}*/
+
+    .card-frame {
+        flex-wrap: wrap;
+    }
+
+    .card-meta-time {
+        padding-top: 8px;
+        padding-left: 8px;
+    }
+
+    .card-meta-commit {
+        gap: 4px;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 500px) {
+    .card-meta-time {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "shri_nodejs_v2",
+  "version": "1.0.0",
+  "description": "SHRI NodeJS Homework",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itookyourboo/shri_nodejs_v2.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "backrem": "^1.1.0",
+    "express": "^4.17.1",
+    "multer": "^1.4.3"
+  }
+}

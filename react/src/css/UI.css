@@ -1,0 +1,174 @@
+@import url(//db.onlinewebfonts.com/c/1c80b15f8cea81048eb8884f4aa303c4?family=Yandex+Sans+Text+Regular);
+
+@font-face {
+    font-family: "Yandex Sans Text Regular";
+    src: url("//db.onlinewebfonts.com/t/1c80b15f8cea81048eb8884f4aa303c4.eot");
+    src: url("//db.onlinewebfonts.com/t/1c80b15f8cea81048eb8884f4aa303c4.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1c80b15f8cea81048eb8884f4aa303c4.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1c80b15f8cea81048eb8884f4aa303c4.woff") format("woff"), url("//db.onlinewebfonts.com/t/1c80b15f8cea81048eb8884f4aa303c4.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1c80b15f8cea81048eb8884f4aa303c4.svg#Yandex Sans Text Regular") format("svg");
+}
+
+.button {
+    border: none;
+    display: flex;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.button.disabled {
+    background: #F2F2F2;
+    pointer-events: none;
+}
+
+.button.disabled div {
+    color: #7F7F7F;
+    opacity: 0.5;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+.button.gray {
+    background: #e6e6e6;
+}
+
+.button.gray:hover {
+    background: #dbdbdb;
+}
+
+.button.gray:focus {
+    border: 2px solid #b3b3b3;
+    box-sizing: border-box;
+}
+
+.button.yellow {
+    background: #ffcc00;
+}
+
+.button.yellow:hover {
+    background: #f2c200;
+}
+
+.button.yellow:focus {
+    border: 2px solid #B38F00;
+    box-sizing: border-box;
+}
+
+.button.white {
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.text-field {
+    background: #ffffff;
+    border: 2px solid #d9d9d9;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    font-family: "Yandex Sans Text Regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+
+    padding-left: 12px;
+    padding-right: 12px;
+
+    line-height: 36px;
+}
+
+.text-field:focus {
+    outline-style: none;
+    border: 2px solid #b3b3b3;
+}
+
+.text-field::placeholder {
+    font-family: "Yandex Sans Text Regular", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+}
+
+.text-field::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    content: url("../img/16_clear.svg");
+    cursor: pointer;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    /*flex-wrap: wrap;*/
+    align-items: flex-start;
+    background: #FFFFFF;
+    box-shadow: 0 0 1px rgba(67, 68, 69, 0.3), 0 1px 1px rgba(67, 68, 69, 0.3);
+    border-radius: 6px;
+    padding: 12px 24px;
+}
+
+.card:hover {
+    cursor: pointer;
+    box-shadow: 0 0 1px rgba(67, 68, 69, 0.3), 0 2px 8px rgba(67, 68, 69, 0.3);
+}
+
+.card-frame {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.card-content {
+    margin-left: 8px;
+    display: block;
+}
+
+.card-meta-commit {
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.card-meta-time{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.status {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.icon-text {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 485px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 0 1px rgba(67, 68, 69, 0.3), 0 6px 16px rgba(67, 68, 69, 0.3);
+    border-radius: 4px;
+}

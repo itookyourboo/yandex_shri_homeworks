@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>Send metrics example</title>
+	<meta charset="UTF-8"/>
+	<style type="text/css">
+		.square {
+			width: 100px;
+			height: 100px;
+
+			margin-bottom: 20px;
+
+			background-color: red;
+		}
+
+		.row {
+			margin: 2px;
+		}
+
+		div.black {
+			background-color: black;
+		}
+	</style>
+</head>
+<body>
+	<a href="stats.html">Перейти на страницу со статистикой</a>
+	<img alt="Картинка с пёсиками" src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F07%2F20%2Fpembroke-welsh-corgi-two-dogs-beach-1286164476-2000.jpg"/>
+	<div class="square"></div>
+	<button class="load">Load</button>
+	<div class="results"></div>
+	<script src="send.js"></script>
+	<script type="module">
+		import { getFCP, getLCP, getFID } from 'https://unpkg.com/web-vitals?module';
+
+		const counterId = 'f635c068-38b1-11ec-8d3d-0242ac130003';
+		const platform = navigator.userAgentData.mobile? 'touch': 'desktop';
+
+		let counter = new Counter();
+
+		counter.init(counterId, String(Math.random()).substr(2, 12), 'send.html');
+		counter.setAdditionalParams({
+			env: 'production',
+			platform: platform
+		});
+
+		counter.send('connect', performance.timing.connectEnd - performance.timing.connectStart);
+		counter.send('ttfb', performance.timing.responseEnd - performance.timing.requestStart);
+
+		// First contentful paint
+		addEventListener('DOMContentLoaded', () => {
+			getFCP((data) => {
+				counter.send('fcp', data.value);
+			})
+		});
+
+		// Largest contentful paint
+		addEventListener('visibilitychange', () => {
+			getLCP((data) => {
+				counter.send('lcp', data.value);
+			})
+		});
+
+		// First input delay
+		getFID((data) => {
+			counter.send('fid', data.value);
+		})
+	</script>
+</body>
+</html>

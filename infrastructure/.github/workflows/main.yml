@@ -1,0 +1,39 @@
+name: Make release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  create-ticket:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: Install packages
+        run: npm i
+
+      - name: Install jq
+        run: sudo apt-get install -y jq
+
+      - name: Release
+        run: sh ./ci/release.sh
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ORG_ID: ${{ secrets.ORG_ID }}
+
+      - name: Run tests
+        run: sh ./ci/test.sh
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          ORG_ID: ${{ secrets.ORG_ID }}
+
+      - name: Congratulations
+        run: echo 'Congrats!'
